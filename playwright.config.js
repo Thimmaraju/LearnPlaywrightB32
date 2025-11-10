@@ -42,6 +42,8 @@ export default defineConfig({
 
    // headless: false,
 
+   testIdAttribute: "aria-label",
+
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on",
     screenshot: "on",

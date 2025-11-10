@@ -2,12 +2,14 @@ import { test, expect } from '@playwright/test';
 
 import logindata from "../../testdata/logindata.json"
 
+const creds = ["Admin", "admin123"]
+
 test('Verify Add Pay grades', async ({ page }) => {
-  await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+  await page.goto(`https://opensource-demo.orangehrmlive.com/web/index.php/auth/login`);
 
-  await page.getByRole('textbox', { name: 'Username' }).fill(logindata.username);
+  await page.getByRole('textbox', { name: 'Username' }).fill(creds[0]);
 
-  await page.getByRole('textbox', { name: 'Password' }).fill('admin123');
+  await page.getByRole('textbox', { name: 'Password' }).fill(creds[1]);
   await page.getByRole('button', { name: 'Login' }).click();
   await page.getByRole('link', { name: 'Admin' }).click();
   await page.getByText('Job').click();

@@ -2,11 +2,15 @@ import { test, expect } from '@playwright/test';
 
 import logindata from "../../testdata/logindata.json"
 
+const url = '/web/index.php/auth/login'
+
+
+
 test('Login with vaild credentials', async ({ page }) => {
   //actions
 
   //Launching url
-  await page.goto('/web/index.php/auth/login');
+  await page.goto(url);
 
   //Entering Username
   await page.getByRole('textbox', { name: 'Username' }).fill(logindata.username);
@@ -27,7 +31,7 @@ test('Login with vaild credentials', async ({ page }) => {
 
 test('Login with valid username and Invalid password', async ({ page }) => {
 //actions 
-  await page.goto('/web/index.php/auth/login')
+  await page.goto(url)
 
   await page.locator("input[name='username']").fill(logindata.username)
 
@@ -44,7 +48,7 @@ test('Login with valid username and Invalid password', async ({ page }) => {
 
 test('Login with INvalid username and valid password', async ({ page }) => {
 // actions 
-  await page.goto('/web/index.php/auth/login')
+  await page.goto(url)
 
   await page.locator("input[name='username']").fill(logindata.wrongusername)
 

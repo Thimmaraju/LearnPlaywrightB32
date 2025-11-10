@@ -1,12 +1,18 @@
 const { test, expect } = require('@playwright/test');
 
+
+const url = 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'
+
+const username = "Admin"
+
+const password = "admin123"
 test('Add Employment Status Test', async ({ page }) => {
     // Navigate to the application
-    await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+    await page.goto(url);
     
     // Login as admin
-    await page.getByPlaceholder('Username').fill('Admin');
-    await page.getByPlaceholder('Password').fill('admin123');
+    await page.getByPlaceholder('Username').fill(username);
+    await page.getByPlaceholder('Password').fill(password);
     await page.getByRole('button', { name: 'Login' }).click();
     
     // Navigate to Admin -> Job -> Employment Status

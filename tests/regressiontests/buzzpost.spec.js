@@ -7,7 +7,7 @@ const baseURL = 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/lo
 test('Valid login and verify dashboard', async ({ page }) => 
  {
   await page.goto(baseURL);
-  await page.locator("input[name='username']").fill(process.env.APP_USERNAME);
+  await page.locator(`input[name='username']`).fill(process.env.APP_USERNAME);
   await page.locator("input[type='password']").fill(process.env.APP_PASSWORD);
   await page.locator("button[type='submit']").click();
   await page.locator("//span[text()='Buzz']").click();

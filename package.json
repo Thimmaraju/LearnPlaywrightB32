@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {},
-  "keywords": [],
-  "author": "",
+  "keywords": ["playwright", "dotenv"],
+  "author": "Raju",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.56.1",
