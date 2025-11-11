@@ -24,8 +24,13 @@ test('Login with vaild credentials', async ({ page }) => {
   //Verifying Dashbaord visible or not 
   await expect(page.getByRole('link', { name: 'Dashboard' })).toBeVisible();
 
-  //verify cuurent url is dashboard url 
+  if (true){
+
+     //verify cuurent url is dashboard url 
   await expect(page).toHaveURL("https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index")
+
+  }
+ 
 });
 
 

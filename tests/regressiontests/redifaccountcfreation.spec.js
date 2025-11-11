@@ -18,7 +18,16 @@ test('Verify Creating rediff account', async ({ page }) => {
 
     await page.locator('select.year').selectOption(data.year)
 
-    await page.locator('(//input[@type="radio"])[2]').check()
+     await page.locator('(//input[@type="radio"])[2]').check()
+
+    const status_radio_btn = await page.locator('//input[@value="f"]').isChecked()
+
+    console.log(status_radio_btn)
+
+    if(status_radio_btn){
+
+        console.log("Female is checked ")
+    }
 
     await page.locator("//label[text()='City']/following-sibling::select").selectOption(data.city)
 
