@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 
+ const { faker } = require('@faker-js/faker');
+
 
 test('verify Add Job Title', async ({ page }) => {
   //actions
@@ -24,7 +26,7 @@ test('verify Add Job Title', async ({ page }) => {
 
   await page.locator("//button[contains(.,'Add')]").click();
 
-  await page.locator("(//label[normalize-space(text())='Job Title']/following::input)[1]").fill('QA Analyst V'+ "Raju");
+  await page.locator("(//label[normalize-space(text())='Job Title']/following::input)[1]").fill(faker.person.jobTitle());
   
   await page.locator('//textarea[@placeholder="Type description here"]').fill("Testing Actiities")
 

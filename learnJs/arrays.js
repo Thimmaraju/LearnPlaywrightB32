@@ -153,6 +153,20 @@ console.log(ar2)
 
 //filter
 
+arr = [1,2,3,4,5,6,7,8,9,10,11,12]
+
+
+arr = ["Raju", "Arun", "Chethana", "Ramya", "Arjun", "sithara"] // []
+
 //map 
 
+arr = [1,2,4]  //Multiply by 2   [2,4,8]
+
+arr = ["Playwright", "Cypress", "WDIO"]// ["Playwright Automation", "Cypress Automation", "WDIO Automation"]
 //reduce
+
+arr = [1,2,3,5,8]   // result =19
+
+//add all the elements 
+
+//Callback 

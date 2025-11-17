@@ -4,10 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {},
-  "keywords": ["playwright", "dotenv"],
+  "keywords": [
+    "playwright",
+    "dotenv"
+  ],
   "author": "Raju",
   "license": "ISC",
   "devDependencies": {
+    "@faker-js/faker": "^10.1.0",
     "@playwright/test": "^1.56.1",
     "@types/node": "^24.9.1"
   },
