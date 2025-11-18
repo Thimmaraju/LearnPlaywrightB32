@@ -98,3 +98,22 @@ console.log(st5.includes("Play") )// False
 
 //npm Package 
 
+
+ st5 = "Playwright Automation tool is number one trending course"
+
+ st6 = st5.substring(0,10)
+
+ console.log(st6)
+
+ st7 = Number("45")
+
+ console.log(st7)
+
+ st8 = parseInt("23.7")
+
+ st9 = parseFloat("56.9")
+
+ 
+ console.log(st8)
+
+  console.log(typeof(st9))
