@@ -84,3 +84,10 @@ console.log(tomorrowStr)
 // Static methods 
 
 //OOPS
+
+
+var price1= Number("₹ 8,999".replace("₹", "").replace(",", "").trim())
+var price2= Number("₹ 8,999".replace("₹", "").replace(",", "").trim())
+
+console.log(price1 + price2)
+
