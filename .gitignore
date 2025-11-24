@@ -8,3 +8,4 @@ node_modules/
 /playwright/.auth/
 e2e
 .env
+learnJs/new

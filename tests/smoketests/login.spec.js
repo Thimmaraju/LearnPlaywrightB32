@@ -48,7 +48,7 @@ test('Login with valid username and Invalid password', async ({ page }) => {
   //actions 
   await page.goto(url)
 
-  await page.locator("input[name='username']").fill(logindata.username)
+  await page.locator("input[name='username']").type("Admin", {delay: 4000})
 
   await page.locator("input[name='password']").fill(logindata.wrongpassword)
 

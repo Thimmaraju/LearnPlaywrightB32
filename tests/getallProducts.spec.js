@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 
 
-test('Verify Get all Product Name', async ({ page }) => {
+test('Verify Get all Product Name', async function ({ page }) {
 
     await page.goto('https://rahulshettyacademy.com/seleniumPractise/#/')
 
