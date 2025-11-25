@@ -4,7 +4,7 @@ import logindata from "../../testdata/logindata.json"
 
 const creds = ["Admin", "admin123"]
 
-test('Verify Add Pay grades', async ({ page }) => {
+test('Verify Add Pay grades',{tag : "@smoke"}, async ({ page }) => {
   await page.goto(`https://opensource-demo.orangehrmlive.com/web/index.php/auth/login`);
 
   await page.getByRole('textbox', { name: 'Username' }).fill(creds[0]);

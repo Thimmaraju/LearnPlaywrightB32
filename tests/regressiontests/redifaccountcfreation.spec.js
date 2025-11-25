@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 import data from "../../testdata/redifaccountdata.json"
 
-test('Verify Creating rediff account', async ({ page }) => {
+test('Verify Creating rediff account',{tag : "@smoke"}, async ({ page }) => {
 
     await page.goto('https://register.rediff.com/register/register.php?FormName=user_details')
 

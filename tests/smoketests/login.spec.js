@@ -6,109 +6,115 @@ const url = '/web/index.php/auth/login'
 
 const creds = {
 
-    username: "Admin",
-    password : "admin123"
+  username: "Admin",
+  password: "admin123"
 }
 
-for (let i = 10; i >= 1; i--) {
+
+test.describe("Verify Login feature", () => {
 
 
-  test(`Login with vaild credentials - ${i}`, async ({ page }) => {
-    //actions
+  for (let i = 10; i >= 1; i--) {
 
-    //Launching url
-    await page.goto(url);
+    test(`Login with vaild credentials - ${i}`, async ({ page }) => {
+      //actions
 
-    //Entering Username
-    await page.getByRole('textbox', { name: 'Username' }).fill(creds.username);
+      //Launching url
+      await page.goto(url);
 
-    //Entering Password 
-    await page.getByRole('textbox', { name: 'Password' }).fill(creds.password);
+      //Entering Username
+      await page.getByRole('textbox', { name: 'Username' }).fill(creds.username);
 
-    // click on login button
-    await page.getByRole('button', { name: 'Login' }).click();
+      //Entering Password 
+      await page.getByRole('textbox', { name: 'Password' }).fill(creds.password);
+
+      // click on login button
+      await page.getByRole('button', { name: 'Login' }).click();
+      //assertions
+      //Verifying Dashbaord visible or not 
+      await expect(page.getByRole('link', { name: 'Dashboard' })).toBeVisible();
+
+      if (true) {
+
+        //verify cuurent url is dashboard url 
+        await expect(page).toHaveURL("https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index")
+
+      }
+
+    });
+  }
+
+
+
+
+  test('Login with valid username and Invalid password', async ({ page }) => {
+    //actions 
+    await page.goto(url)
+
+    await page.locator("input[name='username']").type("Admin", { delay: 4000 })
+
+    await page.locator("input[name='password']").fill(logindata.wrongpassword)
+
+    await page.locator("button[type='submit']").click()
+
     //assertions
-    //Verifying Dashbaord visible or not 
-    await expect(page.getByRole('link', { name: 'Dashboard' })).toBeVisible();
-
-    if (true) {
-
-      //verify cuurent url is dashboard url 
-      await expect(page).toHaveURL("https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index")
-
-    }
-
-  });
-}
+    await expect(page.locator("//p[text()='Invalid credentials']")).toBeVisible()
 
 
+  })
 
 
-test('Login with valid username and Invalid password', async ({ page }) => {
-  //actions 
-  await page.goto(url)
+  test('Login with INvalid username and valid password', async ({ page }) => {
+    // actions 
+    await page.goto(url)
 
-  await page.locator("input[name='username']").type("Admin", {delay: 4000})
+    await page.locator("input[name='username']").fill(logindata.wrongusername)
 
-  await page.locator("input[name='password']").fill(logindata.wrongpassword)
+    await page.locator("input[name='password']").fill(logindata.password)
 
-  await page.locator("button[type='submit']").click()
+    await page.locator("button[type='submit']").click()
 
-  //assertions
-  await expect(page.locator("//p[text()='Invalid credentials']")).toBeVisible()
-
-
-})
+    //assertions
+    await expect(page.locator("//p[text()='Invalid credentials']")).toBeVisible()
 
 
-test('Login with INvalid username and valid password', async ({ page }) => {
-  // actions 
-  await page.goto(url)
-
-  await page.locator("input[name='username']").fill(logindata.wrongusername)
-
-  await page.locator("input[name='password']").fill(logindata.password)
-
-  await page.locator("button[type='submit']").click()
-
-  //assertions
-  await expect(page.locator("//p[text()='Invalid credentials']")).toBeVisible()
+  })
 
 
-})
+  test('Login with INvalid username and Invalid password', async ({ page }) => {
+
+    //actions 
+    await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+
+    await page.locator("input[name='username']").fill(logindata.wrongusername)
+
+    await page.locator("input[name='password']").fill(logindata.wrongpassword)
+
+    await page.locator("button[type='submit']").click()
+
+    //assertions
+    await expect(page.locator("//p[text()='Invalid credentials']")).toBeVisible()
 
 
-test('Login with INvalid username and Invalid password', async ({ page }) => {
+  })
 
-  //actions 
-  await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+  test('Try login without entering credntials', async ({ page }) => {
 
-  await page.locator("input[name='username']").fill(logindata.wrongusername)
+    //actions 
+    await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
 
-  await page.locator("input[name='password']").fill(logindata.wrongpassword)
+    await page.locator("button[type='submit']").click()
 
-  await page.locator("button[type='submit']").click()
+    //assertions 
+    await expect(page.locator("(//span[contains(@class,'oxd-text oxd-text--span')])[1]")).toBeVisible()
 
-  //assertions
-  await expect(page.locator("//p[text()='Invalid credentials']")).toBeVisible()
+    await expect(page.locator("(//span[contains(@class,'oxd-text oxd-text--span')])[2]")).toBeVisible()
 
 
-})
 
-test('Try login without entering credntials', async ({ page }) => {
+  })
 
-  //actions 
-  await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
-
-  await page.locator("button[type='submit']").click()
-
-  //assertions 
-  await expect(page.locator("(//span[contains(@class,'oxd-text oxd-text--span')])[1]")).toBeVisible()
-
-  await expect(page.locator("(//span[contains(@class,'oxd-text oxd-text--span')])[2]")).toBeVisible()
 
 
 
 })
-
-

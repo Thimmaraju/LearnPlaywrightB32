@@ -4,7 +4,7 @@ import { test, expect } from '@playwright/test';
 const baseURL = 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login';
 
 // 🔧 Common login function
-test('Valid login and verify dashboard', async ({ page }) => 
+test('Valid login and verify dashboard',{tag : "@smoke"}, async ({ page }) => 
  {
   await page.goto(baseURL);
   await page.locator(`input[name='username']`).fill(process.env.APP_USERNAME);

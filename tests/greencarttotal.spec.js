@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-test.describe('GreenKart - Add to Cart and Verify Total Price', () => {
+test.describe('GreenKart - Add to Cart and Verify Total Price',{tag: "@payment"}, () => {
 
     test.beforeEach(async ({ page }) => {
         // Navigate to the application
