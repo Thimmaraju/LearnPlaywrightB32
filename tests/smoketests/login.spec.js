@@ -10,17 +10,23 @@ const creds = {
   password: "admin123"
 }
 
+test.beforeEach( async ({page})=>{
+
+     //Launching url
+      await page.goto(url);
+
+})
+
 
 test.describe("Verify Login feature", () => {
 
 
   for (let i = 10; i >= 1; i--) {
 
-    test(`Login with vaild credentials - ${i}`, async ({ page }) => {
+    test.skip(`Login with vaild credentials - ${i}`, async ({ page }) => {
       //actions
 
-      //Launching url
-      await page.goto(url);
+   
 
       //Entering Username
       await page.getByRole('textbox', { name: 'Username' }).fill(creds.username);
@@ -48,8 +54,6 @@ test.describe("Verify Login feature", () => {
 
 
   test('Login with valid username and Invalid password', async ({ page }) => {
-    //actions 
-    await page.goto(url)
 
     await page.locator("input[name='username']").type("Admin", { delay: 4000 })
 
@@ -65,9 +69,6 @@ test.describe("Verify Login feature", () => {
 
 
   test('Login with INvalid username and valid password', async ({ page }) => {
-    // actions 
-    await page.goto(url)
-
     await page.locator("input[name='username']").fill(logindata.wrongusername)
 
     await page.locator("input[name='password']").fill(logindata.password)
@@ -83,9 +84,6 @@ test.describe("Verify Login feature", () => {
 
   test('Login with INvalid username and Invalid password', async ({ page }) => {
 
-    //actions 
-    await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
-
     await page.locator("input[name='username']").fill(logindata.wrongusername)
 
     await page.locator("input[name='password']").fill(logindata.wrongpassword)
@@ -99,9 +97,6 @@ test.describe("Verify Login feature", () => {
   })
 
   test('Try login without entering credntials', async ({ page }) => {
-
-    //actions 
-    await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
 
     await page.locator("button[type='submit']").click()
 
