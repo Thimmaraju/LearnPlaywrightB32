@@ -29,7 +29,7 @@ test(`Verify Adding Employee -1`, async ({ page }) => {
     await page.getByRole('button', { name: 'Login' }).click();
     //assertions
     //Verifying Dashbaord visible or not 
-    await expect(page.getByRole('link', { name: 'Dashboard' })).toBeVisible();
+    await expect.soft(page.getByRole('link', { name: 'DashboardRaju' })).toBeVisible();
 
     await page.locator('//a[@href="/web/index.php/pim/viewPimModule"]').click()
 
@@ -41,8 +41,9 @@ test(`Verify Adding Employee -1`, async ({ page }) => {
 
     await page.locator('(//input[@class="oxd-input oxd-input--active"])[2]').clear()
 
-    await page.locator('//input[@class="oxd-input oxd-input--focus"]').fill("123456")
+    await page.locator('//input[@class="oxd-input oxd-input--focus"]').fill("1234u56")
 
+    await expect(page.locator('//button[@type="submit"]')).toHaveCSS("background-color", "#76bc21")
     await page.locator('//button[@type="submit"]').click()
 
     await expect(page.locator("//h6[text()='Personal Details']")).toBeVisible()
@@ -50,8 +51,4 @@ test(`Verify Adding Employee -1`, async ({ page }) => {
 })
 
 
-test(`Verify Edit Employee -2`, async ({ page }) => {
-
-    
-})
 
