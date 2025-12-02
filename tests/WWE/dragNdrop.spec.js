@@ -7,11 +7,11 @@ test('drag and drop- example13', async ({ page }) => {
 
 
 
-    //    await page.locator("#menu-fried-chicken").dragTo(page.locator("#plate-items"))
+    // await page.locator("#menu-fried-chicken").dragTo(page.locator("#plate-items"))
 
-    //    await page.locator('#menu-hamburger').dragTo( page.locator('#plate-items'))
+    // await page.locator('#menu-hamburger').dragTo(page.locator('#plate-items'))
 
-    //    await page.locator('#menu-ice-cream').dragTo( page.locator('#plate-items'))
+    // await page.locator('#menu-ice-cream').dragTo(page.locator('#plate-items'))
 
     // const sourcesitems = ["#menu-fried-chicken", '#menu-hamburger', '#menu-ice-cream']
     // for (let item of sourcesitems) {
