@@ -59,16 +59,33 @@ test.describe('Automation - Working With Elements', () => {
     await page.keyboard.press("Enter")
 
 
-    const [newwindow] = await Promise.all([
+    const [newTab] = await Promise.all([
       page.waitForEvent('popup'),
-      await page.locator('(//div[@class="KzDlHZ"])[1]').click()
+      await page.locator('(//a[@class="k7wcnx"])[2]').click()
      
     ]);
 
    
-    await newwindow.locator("//button[@class='QqFHMw vslbG+ In9uk2']").click()
+    await expect(newTab.locator("//button[text()='Add to cart']")).toBeVisible()
 
-   await page.locator('(//div[@class="KzDlHZ"])[2]').click()
+  
+
+  })
+
+    test("Orange HRM  - verify Link display", async ({ page }) => {
+
+    await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+
+    const [newTab] = await Promise.all([
+      page.waitForEvent('popup'),
+      await page.locator('//a[@href="https://www.linkedin.com/company/orangehrm/mycompany/"]').click()
+     
+    ]);
+
+   
+    await expect(newTab).toHaveURL('https://www.linkedin.com/company/orangehrm')
+  
+    await newTab.locator('//div[@class="sign-in-modal"]').click()
 
   })
 

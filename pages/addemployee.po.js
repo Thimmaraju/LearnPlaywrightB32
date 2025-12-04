@@ -14,6 +14,8 @@ exports.addEmployeePage = class addEmployeePage{
 
     this.uploadfileBtn = page.locator('//input[@type="file"]')
     this.SaveBtn = page.locator('button[type="submit"]')
+
+    this.successMessage = page.locator("//p[text()='Successfully SavedRaju']")
     this.EmpDetails = page.locator("//h6[text()='Personal Details']")
 
   }
@@ -39,7 +41,8 @@ exports.addEmployeePage = class addEmployeePage{
 
   async empCreateSuccess(){
 
-    await expect(this.EmpDetails).toBeVisible()
+    await expect(this.successMessage).toBeVisible()
+    //await expect(this.EmpDetails).toBeVisible()
   }
 
 }

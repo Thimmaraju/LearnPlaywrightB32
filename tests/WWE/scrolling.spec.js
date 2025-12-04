@@ -4,11 +4,17 @@ test('scroll to specific element', async ({ page }) => {
 
     await page.goto("https://www.imdb.com/chart/top/");
 
+     await page.locator("//h3[text()='The Incredibles']").scrollIntoViewIfNeeded()
+
+     await page.waitForTimeout(5000)
+
+    await page.locator("//h3[text()='The Incredibles']").click()
+
     // let dJanagoMovieLink = await page.locator("//h3[contains(text(),'128. Hamilton')]");
 
     // await dJanagoMovieLink.scrollIntoViewIfNeeded();
 
-    await page.locator("//h3[text()='176. The Bridge on the River Kwai']").scrollIntoViewIfNeeded()
+    //await page.locator("//h3[text()='176. The Bridge on the River Kwai']").scrollIntoViewIfNeeded()
 
     // //await dJanagoMovieLink.click();
 
