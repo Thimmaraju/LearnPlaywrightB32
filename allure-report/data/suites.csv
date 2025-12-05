@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","6455","Login with Invaild username and Invalid password","Google Chrome","Fri Dec 05 09:24:41 IST 2025","passed","Fri Dec 05 09:24:47 IST 2025","","login.spec.js","",""
+"","7423","Login with vaild username and Invalid password","Google Chrome","Fri Dec 05 09:24:26 IST 2025","passed","Fri Dec 05 09:24:34 IST 2025","","login.spec.js","",""
+"","9157","Login with vaild credentials","Google Chrome","Fri Dec 05 09:24:16 IST 2025","passed","Fri Dec 05 09:24:25 IST 2025","","login.spec.js","",""
+"","30288","Verify user can Add Employee","Google Chrome","Fri Dec 05 09:24:56 IST 2025","failed","Fri Dec 05 09:25:27 IST 2025","","addemployee.spec.js","",""
+"","6418","Login with Invaild username and valid password","Google Chrome","Fri Dec 05 09:24:34 IST 2025","passed","Fri Dec 05 09:24:40 IST 2025","","login.spec.js","",""

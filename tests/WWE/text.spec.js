@@ -51,13 +51,13 @@ test("Working with text - Orange HRM", async ({ page }) => {
 
     const username = await page.locator('p[class="oxd-text oxd-text--p"]').first().textContent()
 
-    console.log(username)
+    console.log(username) // Username : Admin
 
-    const usernamevalue  = username.split(" ")
+    const usernamevalue  = username.split(" ") //["Username", ":", "Admin"]
 
-    //await page.locator('input[name="username"]').fill(usernamevalue[2])
+    await page.locator('input[name="username"]').fill(usernamevalue[2])
     //or 
 
-    await page.fill('input[name="username"]', usernamevalue[2])
+    //await page.fill('input[name="username"]', usernamevalue[2])
 
 })
