@@ -16,11 +16,11 @@ require('dotenv').config()
 export default defineConfig({
   testDir: './tests',
 
-  timeout : 60000,  //30 sec default  // 60 sec 
+  //timeout: 60000,  //30 sec default  // 60 sec 
 
   expect: {
 
-    timeout : 20000 // 5 sec 
+    timeout: 20000 // 5 sec 
   },
 
   /* Run tests in files in parallel */
@@ -32,7 +32,7 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 2 : 4,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter:  [["html"], ["allure-playwright"]],          //[['html'], ['list']],
+  reporter: [["html"], ["allure-playwright"]],          //[['html'], ['list']],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
@@ -40,18 +40,27 @@ export default defineConfig({
 
     baseURL: "https://opensource-demo.orangehrmlive.com",
 
-   // headless: false,
+    // headless: false,
 
-   testIdAttribute: "aria-label",
+    testIdAttribute: "aria-label",
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on",
     screenshot: "on",
-    video : "on"
+    video: "on"
   },
 
   /* Configure projects for major browsers */
   projects: [
+
+    // {
+    //   name: "setup",
+    //   use: {
+    //     ...devices['Desktop Chrome'],
+    //     channel: 'chrome'
+    //   },
+    //   testMatch: /.*\.setup\.js/,
+    // },
     // {
     //   name: 'chromium',
     //   use: { ...devices['Desktop Chrome'] },
@@ -84,10 +93,13 @@ export default defineConfig({
     // },
     {
       name: 'Google Chrome',
-      use: { ...devices['Desktop Chrome'], channel: 'chrome',
-          
-          // viewport : {height : 1080, width: 1920}
-       },
+      use: {
+        ...devices['Desktop Chrome'], channel: 'chrome',
+
+        // viewport : {height : 1080, width: 1920}
+        //storageState: ".auth/user.json",
+      },
+      //dependencies: ["setup"],
     },
   ],
 
