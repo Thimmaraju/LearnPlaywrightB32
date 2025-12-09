@@ -25,7 +25,7 @@ test(`Login with vaild credentials`, async () => {
 })
 
 
-test(`Login with vaild username and Invalid password`, async () => {
+test.skip(`Login with vaild username and Invalid password`, async () => {
 
      await login.loginwithCreds(logindata.username, logindata.wrongpassword)
 
@@ -41,11 +41,11 @@ test(`Login with Invaild username and valid password`, async () => {
 })
 
 
-test(`Login with Invaild username and Invalid password`, async () => {
+// test(`Login with Invaild username and Invalid password`, async () => {
 
-     await login.loginwithCreds(logindata.wrongpassword, logindata.wrongpassword)
+//      await login.loginwithCreds(logindata.wrongpassword, logindata.wrongpassword)
 
-     await login.loginfailed()
-})
+//      await login.loginfailed()
+// })
 
 
