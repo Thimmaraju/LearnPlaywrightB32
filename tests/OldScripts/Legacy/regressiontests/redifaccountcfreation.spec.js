@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-import data from "../../../testdata/redifaccountdata.json"
+// import data from "../../../../../testdata/redifaccountdata.json"
 
 test('Verify Creating rediff account',{tag : "@smoke"}, async ({ page }) => {
 

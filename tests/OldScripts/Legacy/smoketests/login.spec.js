@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-import logindata from "../../../testdata/logindata.json"
+// import logindata from "../../../testdata/logindata.json"
 
 const url = '/web/index.php/auth/login'
 

@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-import logindata from "../../testdata/logindata.json"
+
 
 const creds = ["Admin", "admin123"]
 
