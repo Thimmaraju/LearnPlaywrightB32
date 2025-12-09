@@ -50,7 +50,7 @@ test('Multiple Cehck boxes example  ', async ({ page }) => {
 })
 
 
-test.only('Multiple Cehck boxes example - 2 ', async ({ page }) => {
+test('Multiple Cehck boxes example - 2 ', async ({ page }) => {
 
 
  await page.goto('https://rahulshettyacademy.com/AutomationPractice/')
@@ -94,7 +94,7 @@ test('Multiple elements click  ', async ({ page }) => {
 
 
 
-test.only('Multiple Check boxes example - 3', async ({ page }) => {
+test('Multiple Check boxes example - 3', async ({ page }) => {
   await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
 
   // Use locator instead of $$ (ElementHandles)
@@ -113,7 +113,7 @@ test.only('Multiple Check boxes example - 3', async ({ page }) => {
 
 
 
-test.only('Radion Button example - 1', async ({ page }) => {
+test('Radion Button example - 1', async ({ page }) => {
   await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
 
 

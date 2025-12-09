@@ -68,7 +68,7 @@ test('Create Employee API ', async ({ request }) => {
 })
 
 
-test.only("get APIs reqres", async ({ request }) => {
+test("get APIs reqres", async ({ request }) => {
 
     const response = await request.get("https://reqres.in/api/users?page=2",
         {
@@ -95,7 +95,7 @@ test.only("get APIs reqres", async ({ request }) => {
 });
 
 
-test.only("get APIs reqres - for Wrong Auth", async ({ request }) => {
+test("get APIs reqres - for Wrong Auth", async ({ request }) => {
 
     const response = await request.get("https://reqres.in/api/users?page=2",
         {
